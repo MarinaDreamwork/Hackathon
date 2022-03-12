@@ -53,6 +53,164 @@ body {
   align-items: center;
 }
 
-.p {
+.container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: #f1f1f1;
+  max-width: 500px;
+  margin: auto;
+  padding: 10px;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+  border-radius: 10px;
+}
+
+.clear {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  padding: 6px;
   color: white;
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.triangle {
+  width: 7em;
+  height: 7em;
+  filter: drop-shadow(0 0 5px #000);
+  background: linear-gradient(to right bottom, transparent 50%, red 50%) left / 50% 100% no-repeat, linear-gradient(to left bottom, transparent 50%, red 50%) right / 50% 100% no-repeat;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background: rgb(115, 255, 0);
+}
+
+.rectangle {
+  width: 200px;
+  height: 100px;
+  background: rgb(0, 68, 255);
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background: rgb(255, 208, 0);
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+
+.oval {
+  width: 200px;
+  height: 100px;
+  background: rgb(163, 67, 67);
+  -moz-border-radius: 100px / 50px;
+  -webkit-border-radius: 100px / 50px;
+  border-radius: 100px / 50px;
+}
+
+
+/* dfhdfhgfhgfhgfhgfhfghgfhgfhgfhgf */
+
+.triangle-down {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 100px solid rgb(201, 15, 101);
+}
+
+.triangle-left {
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-right: 100px solid rgb(24, 22, 22);
+  border-bottom: 50px solid transparent;
+}
+
+.triangle-right {
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-left: 100px solid red;
+  border-bottom: 50px solid transparent;
+}
+
+.triangle-topleft {
+  width: 0;
+  height: 0;
+  border-top: 100px solid red;
+  border-right: 100px solid transparent;
+}
+
+.parallelogram {
+  width: 150px;
+  height: 100px;
+  -webkit-transform: skew(20deg);
+  -moz-transform: skew(20deg);
+  -o-transform: skew(20deg);
+  background: rgb(14, 190, 235);
+}
+
+.trapezoid {
+  border-bottom: 100px solid rgb(221, 122, 8);
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  height: 0;
+  width: 100px;
+}
+
+.star-six {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid red;
+  position: relative;
+}
+
+.star-six:after {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 100px solid red;
+  position: absolute;
+  content: "";
+  top: 30px;
+  left: -50px;
+}
+
+.pentagon {
+  position: relative;
+  width: 54px;
+  border-width: 50px 18px 0;
+  border-style: solid;
+  border-color: red transparent;
+}
+
+.pentagon:before {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -85px;
+  left: -18px;
+  border-width: 0 45px 35px;
+  border-style: solid;
+  border-color: transparent transparent rgb(12, 235, 12);
 }
