@@ -20,7 +20,6 @@ const items = [{
 ]
 
 const contexMenu = new ContextMenu('#menu', items)
-
 contexMenu.add()
 
 document.addEventListener('contextmenu', function(event) {
