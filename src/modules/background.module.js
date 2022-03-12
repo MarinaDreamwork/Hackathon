@@ -8,6 +8,6 @@ export class BackgroundModule extends Module {
   }
   trigger() {
     document.body.style.background = randomColor()
-      // new ContextMenu('#menu', []).close()
+    new ContextMenu('#menu', []).close()
   }
 }

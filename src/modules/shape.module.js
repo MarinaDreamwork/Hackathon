@@ -28,6 +28,9 @@ export class ShapeModule extends Module {
   trigger() {
     const count = random(1, shapes.length - 1)
     shapes[count](this.parentElem)
-      // new ContextMenu('#menu', []).close()
+    document.querySelector('#menu').classList.remove('open')
+    if (document.querySelector('#timer')) {
+      document.querySelector('#timer').remove()
+    }
   }
 }

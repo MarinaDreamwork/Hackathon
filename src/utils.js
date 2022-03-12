@@ -1,7 +1,9 @@
+// рандомное число от min до max
 export function random(min, max) {
   return Math.round(min - 0.5 + Math.random() * (max - min + 1))
 }
 
+// Функция для фона страницы
 export function randomColor() {
   let letters = '0123456789ABCDEF'
   let color = '#'
@@ -11,6 +13,8 @@ export function randomColor() {
   return color
 }
 
+
+// начало функций фигур (их 11)
 function triangle(container) {
   const triangleElem = document.createElement('div')
   triangleElem.classList.add('triangle', 'shape')
@@ -76,5 +80,40 @@ function pent(container) {
   pent.classList.add('pentagon', 'shape')
   container.append(pent)
 }
+// конец функций фигур (их 11)
 
+
+// Массив функций фигур
 export const shapes = [oval, circle, rectangle, triangle, square, triangleDown, triangleLeft, parallelogram, trapezoid, star, pent]
+
+
+// Массив наших модулей
+export const modulesList = [{
+    type: 'clicks',
+    text: 'Считать клики (за 3 секунды)'
+  },
+  {
+    type: 'shape',
+    text: 'Создать фигуру'
+  },
+  {
+    type: 'background',
+    text: 'Поменять цвет фона'
+  },
+  {
+    type: 'message',
+    text: 'Вызвать сообщение'
+  },
+  {
+    type: 'close',
+    text: 'Закрыть текущую вкладку'
+  },
+  {
+    type: 'reload',
+    text: 'Обновить страницу'
+  },
+  {
+    type: 'timer',
+    text: 'До завершения Хакатона осталось...'
+  }
+]
