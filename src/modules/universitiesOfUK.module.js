@@ -1,15 +1,15 @@
 import { Module } from "../core/module";
-import { getRandomColor, random } from '../utils';
+import { getRandomColor, preloaderElementHTML, preloaderToggle, random } from '../utils';
 
 export class UniversitiesOfUKModule extends Module {
     constructor(type, text) {
       super(type, text)
       this.containerElement = document.createElement('div')
+      
     }
+
     trigger() {
       
-      this.containerElement ? this.containerElement.remove() : null
-
       try{
         const URL = 'http://universities.hipolabs.com/search?country=United+Kingdom';
 
@@ -21,10 +21,9 @@ export class UniversitiesOfUKModule extends Module {
         });
       } catch(error) {
         console.error(`Ошибка: ${error}`)
-      }
-      
-      
+      } 
     }
+
     createHTMLForUniversitiesUK(name, website) {
       this.containerElement.classList.add('container-universities-data', 'element-style')
       this.containerElement.style.width = '50%'
@@ -59,10 +58,8 @@ export class UniversitiesOfUKModule extends Module {
 
       this.containerElement.append(dataElement);
       document.body.append(this.containerElement);
-        return this.containerElement;
-  }
-
-  
+        return this.containerElement  
+    }
 }
 
 

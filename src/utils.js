@@ -118,10 +118,6 @@ export const modulesList = [{
     module: new CountdownTimerModule('timer', 'До завершения Хакатона осталось...')
   },
   {
-    module: new UniversitiesOfUKModule('weather', 'Показать информацию о унивеситете в UK')
+    module: new UniversitiesOfUKModule('weather', 'Показать информацию о унивеситетах в UK')
   }
 ]
-
-export function preloader() {
-  
-}
