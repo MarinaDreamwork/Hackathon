@@ -1,7 +1,9 @@
+import { Module } from './core/module'
 import { ContextMenu } from './menu'
 import './styles.css'
 
-const items = [{
+const items = [
+  {
     type: 'clicks',
     text: 'Считать клики (за 3 секунды)'
   },
@@ -19,10 +21,9 @@ const items = [{
   }
 ]
 
-const contexMenu = new ContextMenu('#menu', items)
-contexMenu.add()
+export const contextMenu = new ContextMenu('#menu')
 
-document.addEventListener('contextmenu', function(event) {
-  event.preventDefault()
-  contexMenu.open(event.x, event.y)
+items.forEach((item) => {
+  const itemList = new Module(item.type, item.text)
+  contextMenu.add(itemList)
 })
