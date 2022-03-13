@@ -7,10 +7,10 @@ export class ReloadWindowModule extends Module {
 
   trigger() {
     setTimeout(() => {
-      if (confirm('Вы действительно хотите обновить страницу?'))
+      if (confirm('Вы действительно хотите обновить страницу?')) {
         window.location.reload()
-      else
-        return
+      }
+      else return
     }, 0)
   }
 }

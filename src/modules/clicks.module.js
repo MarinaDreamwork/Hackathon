@@ -6,10 +6,10 @@ export class ClicksModule extends Module {
     this.singlCcounter = -1
     this.dblCounter = 0
 
-    document.addEventListener('click', (event) => {
+    document.addEventListener('click', () => {
       this.singlCcounter += 1
     })
-    document.addEventListener('dblclick', (event) => {
+    document.addEventListener('dblclick', () => {
       this.dblCounter += 1
     })
   }

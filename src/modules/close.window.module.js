@@ -7,10 +7,8 @@ export class CloseWindowModule extends Module {
 
   trigger() {
     setTimeout(() => {
-      if (confirm('Вы действительно хотите закрыть страницу?'))
-        window.close()
-      else
-        return
+      if (confirm('Вы действительно хотите закрыть страницу?')) window.close()
+      else return 
     }, 0)
   }
 }

@@ -2,6 +2,7 @@ import { BackgroundModule } from "./modules/background.module"
 import { ClicksModule } from "./modules/clicks.module"
 import { CloseWindowModule } from "./modules/close.window.module"
 import { CountdownTimerModule } from "./modules/countdown.timer.module"
+import { MessageModule } from "./modules/message.module"
 import { ReloadWindowModule } from "./modules/reload.window.module"
 import { ShapeModule } from "./modules/shape.module"
 
@@ -99,15 +100,15 @@ export const shapes = [oval, circle, rectangle, triangle, square, triangleDown, 
 export const modulesList = [{
     module: new ClicksModule('clicks', 'Считать клики (за 3 секунды)')
   },
-  // {
-  //   module: new ShapeModule('shape', 'Создать фигуру')
-  // },
+  {
+    module: new ShapeModule('shape', 'Создать фигуру')
+  },
   {
     module: new BackgroundModule('background', 'Поменять цвет фона')
   },
-  // {
-  //   module: new MessageModule('message', 'Вызвать сообщение')
-  // },
+  {
+    module: new MessageModule('message', 'Вызвать сообщение')
+  },
   {
     module: new CloseWindowModule('close', 'Закрыть текущую вкладку')
   },
