@@ -3,8 +3,8 @@ import { Module } from './core/module'
 import { ContextMenu } from './menu'
 import { modulesList } from './utils'
 
-const contexMenu = new ContextMenu('#menu', modulesList)
+const contextMenu = new ContextMenu('#menu', modulesList)
 
 modulesList.forEach((item) => {
-  item.module instanceof Module ? contexMenu.add(item.module) : null
+  item.module instanceof Module ? contextMenu.add(item.module) : null
 })

@@ -106,7 +106,7 @@ export const modulesList = [{
     module: new BackgroundModule('background', 'Поменять цвет фона')
   },
   {
-    module: new MessageModule('message', 'Вызвать сообщение')
+    module: new MessageModule('message', 'Показать текущую дату')
   },
   {
     module: new CloseWindowModule('close', 'Закрыть текущую вкладку')
@@ -118,7 +118,7 @@ export const modulesList = [{
     module: new CountdownTimerModule('timer', 'До завершения Хакатона осталось...')
   },
   {
-    module: new UniversitiesOfUKModule('weather', 'Показать информацию о унивеситете в UK')
+    module: new UniversitiesOfUKModule('weather', 'Показать информацию о унивеситетах в UK')
   }
 ]
 
@@ -149,4 +149,36 @@ export function timeInterval() {
   }, 1000)
 
   return intervalId
+export function createHTMLForMessageBlock() {
+  const containerElement = document.createElement('div')
+  containerElement.classList.add('message-element-container')
+
+  const closeBtn = document.createElement('span')
+  closeBtn.classList.add('message-element-close')
+  closeBtn.innerText = 'Close it'
+
+  const textElement = document.createElement('p')
+  
+  textElement.classList.add('message-element-text')
+  textElement.innerText = 'Сегодня:'
+
+  const dateElement = document.createElement('p')
+
+  containerElement.append(closeBtn, textElement, dateElement)
+
+  dateElement.classList.add('message-element-date')
+  dateElement.innerText = getDayToday()
+
+  document.body.append(containerElement)
+  return containerElement
+}
+
+function getDayToday() {
+  const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
+  const year = new Date().getFullYear();
+  const day = new Date().getDate()
+  const month = months[new Date().getMonth()]
+
+  const todayDate = `${day} ${month} ${year} год`
+  return todayDate
 }
