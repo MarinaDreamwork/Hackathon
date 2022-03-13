@@ -129,7 +129,7 @@ export function isTimer(id) {
   }
 }
 
-export function timerInterval() {
+export function timeInterval() {
   const startDate = new Date('Mar 13, 2022, 23:59:59').getTime()
   const intervalId = setInterval(function() {
     const now = new Date().getTime()
@@ -149,8 +149,4 @@ export function timerInterval() {
   }, 1000)
 
   return intervalId
-}
-
-export function preloader() {
-
 }

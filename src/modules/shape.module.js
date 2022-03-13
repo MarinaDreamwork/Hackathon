@@ -1,6 +1,5 @@
-import { random, shapes } from '../utils'
+import { isTimer, random, shapes } from '../utils'
 import { Module } from '../core/module'
-import { is } from 'core-js/core/object'
 
 export class ShapeModule extends Module {
   constructor(type, text) {
@@ -41,7 +40,8 @@ export class ShapeModule extends Module {
     this.parentElem.style.display = 'flex'
     const count = random(1, shapes.length - 1)
     shapes[count](this.parentElem)
-
-    isTimer()
+    const idTime = document.querySelector('#id-time')
+    if (idTime && Number(idTime.textContent) !== 42)
+      isTimer(Number(idTime.textContent))
   }
 }
