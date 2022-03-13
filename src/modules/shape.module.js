@@ -1,6 +1,5 @@
 import { random, shapes } from '../utils'
 import { Module } from '../core/module'
-import { ContextMenu } from '../menu'
 
 export class ShapeModule extends Module {
   constructor(type, text) {
@@ -28,6 +27,8 @@ export class ShapeModule extends Module {
   trigger() {
     const count = random(1, shapes.length - 1)
     shapes[count](this.parentElem)
-      // new ContextMenu('#menu', []).close()
+    if (document.querySelector('#timer')) {
+      document.querySelector('#timer').remove()
+    }
   }
 }

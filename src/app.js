@@ -1,31 +1,11 @@
+import './styles.css'
 import { Module } from './core/module'
 import { ContextMenu } from './menu'
-import { BackgroundModule } from './modules/background.module'
-import { MessageModule } from './modules/message'
-import { ShapeModule } from './modules/shape.module'
-import { ClicksModule } from './modules/clicks.module'
-import './styles.css'
+import { modulesList } from './utils'
+import { Module } from './core/module'
 
-const items = [
-  {
-    module: new BackgroundModule('background', 'Поменять цвет фона')
-  },
-  {
-    module: new ClicksModule('clicks', 'Считать клики (за 3 секунды)')
-  },
-  // {
-  //   module: new ShapeModule('shape', 'Создать фигуру')
-  // },
+const contexMenu = new ContextMenu('#menu', modulesList)
 
-  {
-    module: new MessageModule('message', 'Вызвать сообщение')
-  }
-]
-
-export const contextMenu = new ContextMenu('#menu', items)
-console.log('contextMenu', contextMenu);
-
-items.forEach((item) => {
-  const itemList = item.module
-  contextMenu.add(itemList)
+modulesList.forEach((item) => {
+  item.module instanceof Module ? contexMenu.add(item.module) : null
 })

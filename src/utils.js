@@ -1,8 +1,18 @@
+import { BackgroundModule } from "./modules/background.module"
+import { ClicksModule } from "./modules/clicks.module"
+import { CloseWindowModule } from "./modules/close.window.module"
+import { CountdownTimerModule } from "./modules/countdown.timer.module"
+import { ReloadWindowModule } from "./modules/reload.window.module"
+import { ShapeModule } from "./modules/shape.module"
+
+
+// рандомное число от min до max
 export function random(min, max) {
   return Math.round(min - 0.5 + Math.random() * (max - min + 1))
 }
 
-export function randomColor() {
+// Функция для фона страницы
+export function getRandomColor() {
   let letters = '0123456789ABCDEF'
   let color = '#'
   for (let i = 0; i < 6; i++) {
@@ -11,6 +21,8 @@ export function randomColor() {
   return color
 }
 
+
+// начало функций фигур (их 11)
 function triangle(container) {
   const triangleElem = document.createElement('div')
   triangleElem.classList.add('triangle', 'shape')
@@ -76,5 +88,33 @@ function pent(container) {
   pent.classList.add('pentagon', 'shape')
   container.append(pent)
 }
+// конец функций фигур (их 11)
 
+
+// Массив функций фигур
 export const shapes = [oval, circle, rectangle, triangle, square, triangleDown, triangleLeft, parallelogram, trapezoid, star, pent]
+
+
+// Массив наших модулей
+export const modulesList = [{
+    module: new ClicksModule('clicks', 'Считать клики (за 3 секунды)')
+  },
+  // {
+  //   module: new ShapeModule('shape', 'Создать фигуру')
+  // },
+  {
+    module: new BackgroundModule('background', 'Поменять цвет фона')
+  },
+  // {
+  //   module: new MessageModule('message', 'Вызвать сообщение')
+  // },
+  {
+    module: new CloseWindowModule('close', 'Закрыть текущую вкладку')
+  },
+  {
+    module: new ReloadWindowModule('reload', 'Обновить страницу')
+  },
+  {
+    module: new CountdownTimerModule('timer', 'До завершения Хакатона осталось...')
+  }
+]
