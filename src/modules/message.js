@@ -1,6 +1,6 @@
 import { Module } from '../core/module'
 
-export class Message extends Module {
+export class MessageModule extends Module {
 
 
 }

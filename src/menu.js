@@ -7,8 +7,9 @@ import { contextMenu } from './app'
 
 
 export class ContextMenu extends Menu {
-  constructor(selector) {
+  constructor(selector, modules) {
     super(selector)
+    this.modules = modules
 
     document.addEventListener('contextmenu', (event) => {
       event.preventDefault()
@@ -24,27 +25,14 @@ export class ContextMenu extends Menu {
     })
 
     this.el.addEventListener('click', (e) => {
-      this.close()
+     
+      this.modules.forEach((module) => {
+        e.target.dataset.type === module.module.type ? module.module.trigger() : null
+      })
 
-      switch (e.target.dataset.type) {
-        case 'background':
-          new BackgroundModule('background', 'text').trigger()
-          break
-        case 'shape':
-          new ShapeModule('shape', 'text').trigger()
-          break
-        case 'message':
-          new Message('message', 'text').trigger()
-          break
-        case 'clicks':
-          new ClicksModule('clicks', 'text').trigger()
-          break
-        default:
-          break
-      }
+       this.close()
     })
   }
-
 
   open() {
     this.el.classList.add('open')
@@ -56,5 +44,6 @@ export class ContextMenu extends Menu {
 
   add(module) {
     this.el.insertAdjacentHTML('beforeend', module.toHTML())
+    console.log(module);
   }
 }
