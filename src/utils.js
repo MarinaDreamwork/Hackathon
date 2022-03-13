@@ -149,6 +149,7 @@ export function timeInterval() {
   }, 1000)
 
   return intervalId
+}
 export function createHTMLForMessageBlock() {
   const containerElement = document.createElement('div')
   containerElement.classList.add('message-element-container')
