@@ -20,7 +20,6 @@ export class CountdownTimer extends Module {
   }
 
   trigger() {
-    document.querySelector('#menu').classList.remove('open')
     if (document.querySelector('.container'))
       document.querySelector('.container').remove()
 

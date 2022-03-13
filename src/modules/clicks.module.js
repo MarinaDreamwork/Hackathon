@@ -15,7 +15,6 @@ export class ClicksModule extends Module {
   }
 
   trigger() {
-    document.querySelector('#menu').classList.remove('open')
     setTimeout(() => {
       const textForAlert = `
       ***********************************************

@@ -1,5 +1,4 @@
 import { Module } from '../core/module'
-import { ContextMenu } from '../menu'
 import { randomColor } from '../utils'
 
 export class BackgroundModule extends Module {
@@ -8,6 +7,5 @@ export class BackgroundModule extends Module {
   }
   trigger() {
     document.body.style.background = randomColor()
-    new ContextMenu('#menu', []).close()
   }
 }
