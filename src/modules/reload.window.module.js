@@ -1,6 +1,6 @@
 import { Module } from '../core/module'
 
-export class ReloadWindow extends Module {
+export class ReloadWindowModule extends Module {
   constructor(type, text) {
     super(type, text)
   }

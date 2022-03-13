@@ -1,17 +1,19 @@
 import { Module } from '../core/module'
 
-export class CountdownTimer extends Module {
+export class CountdownTimerModule extends Module {
   constructor(type, text) {
     super(type, text)
     this.timer = document.querySelector('#timer')
     this.intervalId
-    if (!this.timer)
+
+    if(!this.timer) {
       this.timer = document.createElement('div')
-    this.timer.id = 'timer'
-    document.body.append(this.timer)
+      this.timer.id = 'timer'
+    }
   }
 
   createTimerElementInDOM() {
+    document.body.append(this.timer)
     const textTimer = document.createElement('p')
     textTimer.textContent = 'До окончания Хакатона осталось:'
     const countDown = document.createElement('div')
@@ -20,12 +22,14 @@ export class CountdownTimer extends Module {
   }
 
   trigger() {
-    if (document.querySelector('.container'))
+    if(document.querySelector('.container')) {
       document.querySelector('.container').remove()
-
-    if (!this.timer.hasChildNodes())
+    }
+      
+    if(!this.timer.hasChildNodes()) {
       this.createTimerElementInDOM()
-
+    }
+      
     const startDate = new Date('Mar 13, 2022, 23:59:59').getTime()
     this.intervalId = setInterval(function() {
       const now = new Date().getTime()

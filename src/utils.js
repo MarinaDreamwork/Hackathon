@@ -1,10 +1,18 @@
+import { BackgroundModule } from "./modules/background.module"
+import { ClicksModule } from "./modules/clicks.module"
+import { CloseWindowModule } from "./modules/close.window.module"
+import { CountdownTimerModule } from "./modules/countdown.timer.module"
+import { ReloadWindowModule } from "./modules/reload.window.module"
+import { ShapeModule } from "./modules/shape.module"
+
+
 // рандомное число от min до max
 export function random(min, max) {
   return Math.round(min - 0.5 + Math.random() * (max - min + 1))
 }
 
 // Функция для фона страницы
-export function randomColor() {
+export function getRandomColor() {
   let letters = '0123456789ABCDEF'
   let color = '#'
   for (let i = 0; i < 6; i++) {
@@ -89,31 +97,24 @@ export const shapes = [oval, circle, rectangle, triangle, square, triangleDown, 
 
 // Массив наших модулей
 export const modulesList = [{
-    type: 'clicks',
-    text: 'Считать клики (за 3 секунды)'
+    module: new ClicksModule('clicks', 'Считать клики (за 3 секунды)')
+  },
+  // {
+  //   module: new ShapeModule('shape', 'Создать фигуру')
+  // },
+  {
+    module: new BackgroundModule('background', 'Поменять цвет фона')
+  },
+  // {
+  //   module: new MessageModule('message', 'Вызвать сообщение')
+  // },
+  {
+    module: new CloseWindowModule('close', 'Закрыть текущую вкладку')
   },
   {
-    type: 'shape',
-    text: 'Создать фигуру'
+    module: new ReloadWindowModule('reload', 'Обновить страницу')
   },
   {
-    type: 'background',
-    text: 'Поменять цвет фона'
-  },
-  {
-    type: 'message',
-    text: 'Вызвать сообщение'
-  },
-  {
-    type: 'close',
-    text: 'Закрыть текущую вкладку'
-  },
-  {
-    type: 'reload',
-    text: 'Обновить страницу'
-  },
-  {
-    type: 'timer',
-    text: 'До завершения Хакатона осталось...'
+    module: new CountdownTimerModule('timer', 'До завершения Хакатона осталось...')
   }
 ]
