@@ -3,14 +3,15 @@ import { Module } from '../core/module'
 export class ClicksModule extends Module {
   constructor(type, text) {
     super(type, text)
-    this.singlCcounter = -1
-    this.dblCounter = 0
+    this.singleCounterSum = -1
+    this.dblCounterSum = 0
 
     document.addEventListener('click', () => {
-      this.singlCcounter += 1
+      this.singleCounterSum++
     })
+
     document.addEventListener('dblclick', () => {
-      this.dblCounter += 1
+      this.dblCounterSum++
     })
   }
 
@@ -18,10 +19,13 @@ export class ClicksModule extends Module {
     setTimeout(() => {
       const textForAlert = `
       ***********************************************
-      Вы сделали одинарных кликов - ${this.singlCcounter} раз (а).
-      Вы сделали двойных кликов - ${this.dblCounter} раз (а).
+      Вы сделали одинарных кликов - ${this.singleCounterSum} раз (а).
+      Вы сделали двойных кликов - ${this.dblCounterSum} раз (а).
       ************************************************`
       alert(textForAlert)
     }, 3000);
+    // сбрасываем счетчик после отработки вызова alert, чтобы кол-во кликов не копилось в глобальной переменной
+    this.singleCounterSum = -1
+    this.dblCounterSum = 0
   }
 }
