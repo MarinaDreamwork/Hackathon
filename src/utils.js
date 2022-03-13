@@ -5,7 +5,7 @@ import { CountdownTimerModule } from "./modules/countdown.timer.module"
 import { MessageModule } from "./modules/message.module"
 import { ReloadWindowModule } from "./modules/reload.window.module"
 import { ShapeModule } from "./modules/shape.module"
-
+import { UniversitiesOfUKModule } from "./modules/universitiesOfUK.module"
 
 // рандомное число от min до max
 export function random(min, max) {
@@ -21,7 +21,6 @@ export function getRandomColor() {
   }
   return color
 }
-
 
 // начало функций фигур (их 11)
 function triangle(container) {
@@ -117,5 +116,12 @@ export const modulesList = [{
   },
   {
     module: new CountdownTimerModule('timer', 'До завершения Хакатона осталось...')
+  },
+  {
+    module: new UniversitiesOfUKModule('weather', 'Показать информацию о унивеситете в UK')
   }
 ]
+
+export function preloader() {
+  
+}

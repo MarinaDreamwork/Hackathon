@@ -86,7 +86,7 @@ body {
 .clear {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 60px;
   width: 50px;
   padding: 6px;
   color: white;
@@ -98,6 +98,22 @@ body {
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
+/* .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  padding: 6px;
+  color: white;
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+} */
 
 .triangle {
   width: 7em;
@@ -223,4 +239,13 @@ body {
   border-width: 0 45px 35px;
   border-style: solid;
   border-color: transparent transparent rgb(12, 235, 12);
+}
+
+.universities {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.element-style {
+  padding: 15px;
 }
