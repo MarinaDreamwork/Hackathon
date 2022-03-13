@@ -40,6 +40,7 @@ body {
   background: #343434;
 }
 
+
 /* start timer */
 
 #timer {
@@ -63,6 +64,7 @@ body {
   text-align: center;
   font-weight: 500;
 }
+
 
 /* end timer */
 
@@ -99,7 +101,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-/* .close {
+.close {
   position: absolute;
   top: 0;
   right: 0;
@@ -113,7 +115,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-} */
+}
 
 .triangle {
   width: 7em;

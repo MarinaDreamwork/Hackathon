@@ -122,6 +122,35 @@ export const modulesList = [{
   }
 ]
 
+export function isTimer(id) {
+  if (document.querySelector('#timer')) {
+    document.querySelector('#timer').remove()
+    clearInterval(id)
+  }
+}
+
+export function timerInterval() {
+  const startDate = new Date('Mar 13, 2022, 23:59:59').getTime()
+  const intervalId = setInterval(function() {
+    const now = new Date().getTime()
+    const diff = (startDate - now)
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000)
+
+    document.getElementById('countdown').innerHTML = days + "д " + hours + "ч " + minutes + "м " + seconds + "с "
+
+    if (diff < 0) {
+      clearInterval(intervalId)
+      document.getElementById('countdown').innerHTML = 'Хакатон завершился'
+    }
+  }, 1000)
+
+  return intervalId
+}
+
 export function preloader() {
-  
+
 }
