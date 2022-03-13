@@ -249,3 +249,32 @@ body {
 .element-style {
   padding: 15px;
 }
+
+.message-element-container {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  height: 150px;
+  background:rgb(58, 17, 105);
+  border-radius: 15px;
+}
+
+.message-element-text,
+.message-element-date {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+}
+
+.message-element-close {
+  color: rgb(58, 17, 105);
+  font-weight: bold;
+  margin: 10px;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid rgb(58, 17, 105);
+  text-align: right;
+  cursor: pointer;
+}
